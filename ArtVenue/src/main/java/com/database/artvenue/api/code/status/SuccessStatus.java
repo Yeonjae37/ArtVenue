@@ -1,4 +1,4 @@
-package com.database.artvenue.api.status;
+package com.database.artvenue.api.code.status;
 
 import com.database.artvenue.api.code.BaseCode;
 import com.database.artvenue.api.code.ReasonDto;
