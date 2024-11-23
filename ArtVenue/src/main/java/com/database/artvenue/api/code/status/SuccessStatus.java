@@ -14,6 +14,8 @@ public enum SuccessStatus implements BaseCode {
     _GET_USER_OK(HttpStatus.OK, "2001", "유저 로그인이 완료되었습니다."),
     _POST_USER_OK(HttpStatus.OK, "2002", "유저 회원가입이 완료되었습니다."),
 
+    _CAFE_OK(HttpStatus.OK, "2003", "카페 등록이 완료되었습니다."),
+
     ;
 
 
