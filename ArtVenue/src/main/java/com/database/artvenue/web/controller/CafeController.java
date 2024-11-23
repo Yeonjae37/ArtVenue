@@ -4,11 +4,9 @@ import com.database.artvenue.api.ApiResponse;
 import com.database.artvenue.api.code.status.SuccessStatus;
 import com.database.artvenue.service.CafeService;
 import com.database.artvenue.web.dto.cafe.CafeRequestDTO;
+import com.database.artvenue.web.dto.cafe.CafeResponseDTO;
 import io.swagger.v3.oas.annotations.Operation;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/cafe")
@@ -25,5 +23,12 @@ public class CafeController {
         cafeService.addCafe(request);
 
         return ApiResponse.of(SuccessStatus._CAFE_OK, null);
+    }
+
+    @Operation(summary = "전체 카페 목록 조회 api", description = "전체 카페 목록을 가져오는 api입니다.")
+    @GetMapping
+    public ApiResponse getCafes(@RequestParam(name = "page") Integer page) {
+        CafeResponseDTO.CafePreviewListDTO response = cafeService.getCafePreviewList(page);
+        return ApiResponse.of(SuccessStatus._GET_LIST_CAFE_OK, response);
     }
 }
