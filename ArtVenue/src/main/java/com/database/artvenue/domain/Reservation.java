@@ -1,4 +1,5 @@
 package com.database.artvenue.domain;
+import com.database.artvenue.domain.enums.StatusType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,7 +17,7 @@ public class Reservation {
     @Column(nullable = false)
     private java.sql.Date reservationDate; //예약한 날짜
 
-    private String status; //예약 상태
+    private StatusType status; //예약 상태
 
     private Double totalFee; //렌탈비 + 수수료
 
