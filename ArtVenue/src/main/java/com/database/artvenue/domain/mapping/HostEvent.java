@@ -3,8 +3,13 @@ package com.database.artvenue.domain.mapping;
 import com.database.artvenue.domain.Event;
 import com.database.artvenue.domain.User;
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
+@Getter
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 public class HostEvent {
 
     @Id

@@ -17,7 +17,11 @@ public enum SuccessStatus implements BaseCode {
     _CAFE_OK(HttpStatus.OK, "2003", "카페 등록이 완료되었습니다."),
     _GET_LIST_CAFE_OK(HttpStatus.OK, "2004", "카페 전체 리스트 조회가 완료되었습니다."),
     _GET_CAFE_OK(HttpStatus.OK, "2005", "카페 상세 조회가 완료되었습니다."),
+    _GET_LIST_RESERVATION_OK(HttpStatus.OK, "2006", "예약 내역 전체 조회가 완료되었습니다."),
 
+    _CREATE_RESERVATION_OK(HttpStatus.OK, "3001", "카페 예약이 완료되었습니다."),
+
+    _PAYMENT_SUCCESS(HttpStatus.OK, "2008", "결제가 완료되었습니다.")
     ;
 
 
