@@ -1,5 +1,6 @@
 package com.database.artvenue.domain;
 
+import com.database.artvenue.enums.UserType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,9 +18,13 @@ public class User {
     @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
+    private String password;
+
     private String contactInfo;
 
-    private String userType;
+    @Enumerated(EnumType.STRING)
+    private UserType userType;
 
     @OneToOne(mappedBy = "owner", cascade = CascadeType.ALL)
     private Cafe cafe;

@@ -1,4 +1,5 @@
 package com.database.artvenue.domain;
+import com.database.artvenue.domain.mapping.HostEvent;
 import jakarta.persistence.*;
 import lombok.*;
 

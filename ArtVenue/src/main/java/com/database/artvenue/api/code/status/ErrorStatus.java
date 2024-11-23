@@ -16,19 +16,18 @@ public enum ErrorStatus implements BaseErrorCode {
     _UNAUTHORIZED(HttpStatus.UNAUTHORIZED,"COMMON401","인증이 필요합니다."),
     _FORBIDDEN(HttpStatus.FORBIDDEN, "COMMON403", "금지된 요청입니다."),
 
-    //OAUTH
-    _ACCESS_NOT_FOUND(HttpStatus.NOT_FOUND, "OAUTH4001", "Access Token이 없습니다."),
-    _REFRESH_NOT_FOUND(HttpStatus.NOT_FOUND, "OAUTH4002", "Refresh Token이 없습니다."),
-    _ACCESS_INVALID(HttpStatus.BAD_REQUEST, "OAUTH4003", "Access Token이 유효하지 않습니다."),
-    _REFRESH_INVALID(HttpStatus.BAD_REQUEST,"OAUTH4004", "Refresh Token이 유효하지 않습니다."),
-    _ACCESS_EXPIRED(HttpStatus.BAD_REQUEST,"OAUTH4005", "Access Token이 만료되었습니다"),
-    _REFRESH_EXPIRED(HttpStatus.BAD_REQUEST,"OAUTH4006", "Refresh Token이 만료되었습니다"),
-
     //NOTFOUND
-    _USER_NOT_FOUND(HttpStatus.NOT_FOUND, "USER404", "User not found."),
-    _BOOKMARK_NOT_FOUND(HttpStatus.NOT_FOUND, "BOOKMARK404", "Bookmark not found."),
-    _FOLDER_NOT_FOUND(HttpStatus.NOT_FOUND, "FOLDER404", "Folder not found.");
+    _USER_NOT_FOUND(HttpStatus.NOT_FOUND, "USER404", "유저를 찾을 수 없습니다."),
 
+    //USER
+    _INVALID_PASSWORD(HttpStatus.BAD_REQUEST, "USER4001", "비밀번호가 올바르지 않습니다."),
+
+
+
+
+
+
+    ;
 
     private final HttpStatus httpStatus;
     private final String code;
