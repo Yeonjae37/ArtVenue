@@ -1,4 +1,5 @@
 package com.database.artvenue.domain;
+import com.database.artvenue.domain.enums.EventType;
 import com.database.artvenue.domain.mapping.HostEvent;
 import jakarta.persistence.*;
 import lombok.*;
@@ -24,7 +25,7 @@ public class Event {
     @JoinColumn(name = "cafe_id", referencedColumnName = "cafeId")
     private Cafe cafe;
 
-    private String eventType;
+    private EventType eventType;
 
     private java.sql.Date eventDate;
 
