@@ -1,7 +1,7 @@
 package com.database.artvenue.converter;
 
 import com.database.artvenue.domain.User;
-import com.database.artvenue.enums.UserType;
+import com.database.artvenue.domain.enums.UserType;
 import com.database.artvenue.web.dto.user.UserRequestDTO;
 
 public class UserConverter {

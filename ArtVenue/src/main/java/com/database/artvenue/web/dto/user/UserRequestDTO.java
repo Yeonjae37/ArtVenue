@@ -1,6 +1,6 @@
 package com.database.artvenue.web.dto.user;
 
-import com.database.artvenue.enums.UserType;
+import com.database.artvenue.domain.enums.UserType;
 import lombok.Getter;
 
 public class UserRequestDTO {

@@ -1,6 +1,6 @@
 package com.database.artvenue.request;
 
-import com.database.artvenue.enums.UserType;
+import com.database.artvenue.domain.enums.UserType;
 import jakarta.validation.constraints.NotEmpty;
 
 public record UserRequest(

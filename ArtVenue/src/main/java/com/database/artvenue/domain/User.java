@@ -1,6 +1,6 @@
 package com.database.artvenue.domain;
 
-import com.database.artvenue.enums.UserType;
+import com.database.artvenue.domain.enums.UserType;
 import jakarta.persistence.*;
 import lombok.*;
 

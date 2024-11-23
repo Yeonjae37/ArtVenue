@@ -1,4 +1,4 @@
-package com.database.artvenue.enums;
+package com.database.artvenue.domain.enums;
 
 public enum UserType {
     OWNER,
