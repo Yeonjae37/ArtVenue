@@ -18,6 +18,7 @@ public enum ErrorStatus implements BaseErrorCode {
 
     //NOTFOUND
     _USER_NOT_FOUND(HttpStatus.NOT_FOUND, "USER404", "유저를 찾을 수 없습니다."),
+    _CAFE_NOT_FOUND(HttpStatus.NOT_FOUND, "CAFE404", "카페를 찾을 수 없습니다."),
 
     //USER
     _INVALID_PASSWORD(HttpStatus.BAD_REQUEST, "USER4001", "비밀번호가 올바르지 않습니다."),

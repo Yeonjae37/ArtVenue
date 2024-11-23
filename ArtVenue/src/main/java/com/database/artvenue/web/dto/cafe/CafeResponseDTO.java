@@ -31,4 +31,16 @@ public class CafeResponseDTO {
         String name;
         String location;
     }
+
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @Builder
+    public static class CafeDetailDTO {
+        Integer cafeId;
+        String name;
+        String location;
+        Integer capacity;
+        Double rentalFee;
+    }
 }

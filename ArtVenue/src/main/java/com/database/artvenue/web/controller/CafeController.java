@@ -31,4 +31,11 @@ public class CafeController {
         CafeResponseDTO.CafePreviewListDTO response = cafeService.getCafePreviewList(page);
         return ApiResponse.of(SuccessStatus._GET_LIST_CAFE_OK, response);
     }
+
+    @Operation(summary = "카페 상세 조회 api", description = "카페 상세 정보를 가져오는 api입니다.")
+    @GetMapping("detail/{cafeId}")
+    public ApiResponse getCafe(@PathVariable Long cafeId) {
+        CafeResponseDTO.CafeDetailDTO response = cafeService.getCafeDetail(cafeId);
+        return ApiResponse.of(SuccessStatus._GET_CAFE_OK, response);
+    }
 }

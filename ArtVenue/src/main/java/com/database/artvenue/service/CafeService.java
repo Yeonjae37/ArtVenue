@@ -38,4 +38,17 @@ public class CafeService {
         CafeResponseDTO.CafePreviewListDTO cafePreviewListDTO = CafeConverter.toCafePreviewListDTO(cafes);
         return cafePreviewListDTO;
     }
+
+    public CafeResponseDTO.CafeDetailDTO getCafeDetail(Long id){
+        Cafe cafe = cafeRepository.findById(id)
+                .orElseThrow(() -> new UserHandler(ErrorStatus._CAFE_NOT_FOUND));
+
+        return CafeResponseDTO.CafeDetailDTO.builder()
+                .cafeId(cafe.getCafeId())
+                .name(cafe.getName())
+                .location(cafe.getLocation())
+                .capacity(cafe.getCapacity())
+                .rentalFee(cafe.getRentalFee())
+                .build();
+    }
 }

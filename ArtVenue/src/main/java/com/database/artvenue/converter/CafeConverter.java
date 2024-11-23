@@ -21,12 +21,10 @@ public class CafeConverter {
     }
 
     public static CafeResponseDTO.CafePreviewListDTO toCafePreviewListDTO(Page<Cafe> cafes) {
-        // Cafe 엔티티를 CafePreviewDTO로 변환
         List<CafeResponseDTO.CafePreviewDTO> cafePreviewDTOList = cafes.getContent().stream()
                 .map(cafe -> toCafePreviewDTO(cafe))
                 .collect(Collectors.toList());
 
-        // CafePreviewListDTO 생성
         return CafeResponseDTO.CafePreviewListDTO.builder()
                 .cafePreviewDTOList(cafePreviewDTOList)
                 .listSize(cafes.getSize())
