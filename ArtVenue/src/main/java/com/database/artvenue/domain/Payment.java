@@ -1,6 +1,10 @@
 package com.database.artvenue.domain;
+import com.database.artvenue.domain.enums.PaymentStatusType;
+import com.database.artvenue.domain.enums.PaymentType;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.sql.Date;
 
 @Entity
 @Getter
@@ -19,10 +23,21 @@ public class Payment {
     @Column(nullable = false)
     private Double amount;
 
-    @Column(nullable = false)
     private java.sql.Date paymentDate;
 
-    private String paymentMethod;
+    @Enumerated(EnumType.STRING)
+    private PaymentType paymentMethod;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private PaymentStatusType status;
+
+    public void updatePaymentStatus(PaymentStatusType status, PaymentType paymentMethod) {
+        if (this.status == PaymentStatusType.COMPLETED) {
+            throw new IllegalStateException("Payment is already completed.");
+        }
+        this.status = status;
+        this.paymentMethod = paymentMethod;
+        this.paymentDate = new Date(System.currentTimeMillis()); // 결제 완료 시간
+    }
 }
